@@ -5,5 +5,8 @@
   <file>app/UCSComponents/EmptyState.qml</file>
   <file>app/UCSComponents/RadialAction.qml</file>
   <file>app/UCSComponents/RadialBottomEdge.qml</file>
+
+  <file>app/Scripts/RYD.js</file>
+  <file>app/Scripts/cssInjection.js</file>
 </qresource>
 </RCC>

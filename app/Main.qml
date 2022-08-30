@@ -38,10 +38,14 @@ Rectangle {
 
         userScripts: [
            WebEngineScript {
-               id: cssinjection
                injectionPoint: WebEngineScript.DocumentReady
                worldId: WebEngineScript.UserWorld
-               sourceCode: "\n(function() {\nvar css = \"* {font-family: \\\"Ubuntu\\\" !important; font-size: 10pt !important;} ytm-pivot-bar-renderer {display: none !important;}\"\n\n;\n\n\nif (typeof GM_addStyle != \"undefined\") {\n\tGM_addStyle(css);\n} else if (typeof PRO_addStyle != \"undefined\") {\n\tPRO_addStyle(css);\n} else if (typeof addStyle != \"undefined\") {\n\taddStyle(css);\n} else {\n\tvar node = document.createElement(\"style\");\n\tnode.type = \"text/css\";\n\tnode.appendChild(document.createTextNode(css));\n\tvar heads = document.getElementsByTagName(\"head\");\n\tif (heads.length > 0) {\n\t\theads[0].appendChild(node); \n\t} else {\n\t\t// no head yet, stick it whereever\n\t\tdocument.documentElement.appendChild(node);\n\t}\n}\n\n})();"
+               sourceUrl: Qt.resolvedUrl("./Scripts/cssInjection.js")
+           },
+           WebEngineScript {
+               injectionPoint: WebEngineScript.DocumentReady
+               worldId: WebEngineScript.UserWorld
+               sourceUrl: Qt.resolvedUrl("./Scripts/RYD.js")
            }
        ]
     
