@@ -46,6 +46,11 @@ Rectangle {
                injectionPoint: WebEngineScript.DocumentReady
                worldId: WebEngineScript.UserWorld
                sourceUrl: Qt.resolvedUrl("./Scripts/RYD.js")
+           },
+           WebEngineScript {
+               injectionPoint: WebEngineScript.DocumentReady
+               worldId: WebEngineScript.UserWorld
+               sourceUrl: Qt.resolvedUrl("./Scripts/sb.js")
            }
        ]
     
@@ -53,13 +58,11 @@ Rectangle {
     }
 
     WebView {
-
         id: webview
-        
         anchors.fill: parent
+
         backgroundColor: "#111111"
         url: "https://m.youtube.com/"
-        
         
         profile: defaultProfile
         settings.fullScreenSupportEnabled: true
